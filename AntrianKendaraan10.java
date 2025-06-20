@@ -1,13 +1,13 @@
-public class AntrianKendaraan {
+public class AntrianKendaraan10 {
     NodeKendaraan front, rear;
     int size;
 
-    public AntrianKendaraan() {
+    public AntrianKendaraan10() {
         front = rear = null;
         size = 0;
     }
 
-    public void tambahAntrian(Kendaraan k) {
+    public void tambahAntrian(Kendaraan10 k) {
         NodeKendaraan newNode = new NodeKendaraan(k);
         if (rear == null) {
             front = rear = newNode;
@@ -19,13 +19,13 @@ public class AntrianKendaraan {
         System.out.println(">> Kendaraan masuk ke dalam antrian.");
     }
 
-    public Kendaraan layaniAntrian() {
+    public Kendaraan10 layaniAntrian() {
         if (front == null) {
             System.out.println(">> Tidak ada kendaraan dalam antrian.");
             return null;
         }
 
-        Kendaraan k = front.kendaraan;
+        Kendaraan10 k = front.kendaraan;
         System.out.println("Petugas melayani " + k.platNomor);
         front = front.next;
         if (front == null) rear = null;
@@ -57,10 +57,10 @@ public class AntrianKendaraan {
     }
 
     public static class NodeKendaraan {
-        Kendaraan kendaraan;
+        Kendaraan10 kendaraan;
         NodeKendaraan next;
 
-        public NodeKendaraan(Kendaraan kendaraan) {
+        public NodeKendaraan(Kendaraan10 kendaraan) {
             this.kendaraan = kendaraan;
             this.next = null;
         }

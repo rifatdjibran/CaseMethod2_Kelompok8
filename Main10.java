@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AntrianKendaraan antrian = new AntrianKendaraan();
-        QueueTransaksi transaksiQueue = new QueueTransaksi(100);
+        AntrianKendaraan10 antrian = new AntrianKendaraan10();
+        QueueTransaksi10 transaksiQueue = new QueueTransaksi10(100);
         int pilih;
 
         do {
@@ -27,7 +27,9 @@ public class Main {
                     String tipe = sc.nextLine();
                     System.out.print("Masukkan Merk: ");
                     String merk = sc.nextLine();
-                    Kendaraan k = new Kendaraan(plat, tipe, merk);
+                    System.out.print("Masukkan Tanggal Masuk: ");
+                    String tanggal = sc.nextLine();
+                    Kendaraan10 k = new Kendaraan10(plat, tipe, merk, tanggal);
                     antrian.tambahAntrian(k);
                     break;
 
@@ -40,9 +42,8 @@ public class Main {
                     break;
 
                 case 4:
-                    Kendaraan dilayani = antrian.layaniAntrian();
+                    Kendaraan10 dilayani = antrian.layaniAntrian();
                     if (dilayani != null) {
-                        // System.out.println("Petugas melayani " + dilayani.platNomor);
                         System.out.print("Masukkan Jenis BBM: ");
                         String namaBBM = sc.nextLine();
                         System.out.print("Masukkan Harga per liter: ");
@@ -50,8 +51,8 @@ public class Main {
                         System.out.print("Masukkan Jumlah liter: ");
                         double liter = sc.nextDouble();
                         sc.nextLine();
-                        BBM bbm = new BBM(namaBBM, harga);
-                        TransaksiPengisian tp = new TransaksiPengisian(dilayani, bbm, liter);
+                        BBM10 bbm = new BBM10(namaBBM, harga);
+                        TransaksiPengisian10 tp = new TransaksiPengisian10(dilayani, bbm, liter);
                         transaksiQueue.enqueue(tp);
                     }
                     break;
